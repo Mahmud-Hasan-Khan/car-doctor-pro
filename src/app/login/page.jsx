@@ -1,10 +1,14 @@
+"use client"
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
+import { FaFacebookF,FaLinkedinIn } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 const Page = () => {
     return (
-        <div className='container mx-auto px-40'>
-            <div className='grid grid-cols-2 gap-12'>
+        <div className='container mx-auto px-40 mb-12'>
+            <div className='grid grid-cols-2 gap-12 items-center'>
                 <div>
                     <Image src="/assets/images/login/login.svg" width={460} height={460} />
                 </div>
@@ -17,6 +21,13 @@ const Page = () => {
                     <label className='text-[#444] text-lg font-semibold' htmlFor="password">Confirm Password</label> <br />
                     <input className='border-[1px] rounded-[10px] border-[#d0d0d0] p-3 mt-2  w-full' type="password" name="password" id="" placeholder='Your Password' />
                     <button className='btn btn-primary w-full text-lg mt-8'>Sign In</button>
+                    <h6 className='text-lg font-medium text-center text-[#444] mt-8'>Or Sign In with</h6>
+                    <div className='flex items-center gap-3 justify-center py-8'>
+                        <button className='btn btn-circle text-[#3b5998] text-2xl'><FaFacebookF /></button>
+                        <button className='btn btn-circle  text-[#0a66c2] text-2xl'><FaLinkedinIn /></button>
+                        <button className='btn btn-circle text-2xl'><FcGoogle  /></button>
+                    </div>
+                    <h5 className='text-lg text-center text-[#d0d0d0] mb-16'>Don't Have an account? <Link href={'/signup'}> <span className='text-primary font-semibold hover:underline'>Sign Up </span></Link>  </h5>
                 </div>
             </div>
         </div>
