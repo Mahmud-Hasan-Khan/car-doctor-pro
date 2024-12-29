@@ -47,7 +47,7 @@ const Navbar = () => {
                 <HiOutlineShoppingBag />
                 <GoSearch />
                 </div>
-                <a className="btn btn-outline btn-primary px-6">Appointment</a>
+                <Link href={'/login'} className="btn btn-outline btn-primary px-6">Appointment</Link>
             </div>
         </div>
     );
