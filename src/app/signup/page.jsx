@@ -7,8 +7,14 @@ import { FcGoogle } from "react-icons/fc";
 
 const Page = () => {
 
-  const handleSignUp = async () => {
-
+  const handleSignUp = async (event) => {
+    event.preventDefault();
+    const newUser={
+      name: event.target.name.value,
+      email: event.target.email.value,
+      password: event.target.password.value,
+    }
+    // console.log(newUser);
   }
 
   return (
