@@ -22,7 +22,7 @@ const Page = () => {
         "content-type": "application/json"
       }
     })
-    console.log(resp);
+
     if (resp.status === 200) {
       event.target.reset()
     }
