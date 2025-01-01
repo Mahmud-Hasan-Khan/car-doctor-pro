@@ -2,13 +2,23 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { signIn } from 'next-auth/react';
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 
 const Page = () => {
 
-    const handleLogin=async()=>{
-        
+    const handleLogin = async (event) => {
+        event.preventDefault();
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        const resp = signIn('credentials', {
+            email,
+            password,
+            redirect: false
+        });
+        console.log(resp);
+
     }
 
     return (
